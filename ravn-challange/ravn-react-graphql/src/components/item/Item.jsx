@@ -6,7 +6,7 @@ import * as IconName from "react-icons/md";
 import './Item.css';
 
 const Item = ({ id, name, item}) => {
-   
+    console.log('item', item)
     return (
         <section className='card-item d-flex-row'>
             

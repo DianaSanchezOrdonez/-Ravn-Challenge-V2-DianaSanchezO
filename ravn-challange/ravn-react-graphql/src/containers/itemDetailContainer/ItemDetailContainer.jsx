@@ -6,9 +6,9 @@ import Detail from '../../components/detail/Detail';
 
 import './ItemDetailContainer.css';
 
-const GET_DETAIL_PEOPLE = gql`
-{
-    person (id:"cGVvcGxlOjE"){
+const GET_DETAIL_PERSON = gql`
+query getDetailPerson ($itemID: ID!) {
+    person (id: $itemID){
       id
       name
       eyeColor
@@ -29,7 +29,7 @@ const GET_DETAIL_PEOPLE = gql`
   }); */
 
 const ItemDetailContainer = ({itemID}) => {
-    const { loading, error, data } = useQuery(GET_DETAIL_PEOPLE);
+    const { loading, error, data } = useQuery(GET_DETAIL_PERSON, {variables: {itemID}});
 
     console.log('itemID', itemID)
     
