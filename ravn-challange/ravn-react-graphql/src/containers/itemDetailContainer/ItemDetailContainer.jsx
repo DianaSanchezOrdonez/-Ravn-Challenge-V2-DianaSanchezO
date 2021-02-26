@@ -24,14 +24,8 @@ query getDetailPerson ($itemID: ID!) {
   }
 `;
 
-/* return data.allPeople.people.map((character, index) => {
-    return <p key={index}>{character.name}</p>;
-  }); */
-
 const ItemDetailContainer = ({itemID}) => {
     const { loading, error, data } = useQuery(GET_DETAIL_PERSON, {variables: {itemID}});
-
-    console.log('itemID', itemID)
     
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error data!..</p>;
@@ -39,7 +33,7 @@ const ItemDetailContainer = ({itemID}) => {
     return (
         <aside className='container-detail'>
             {
-                <Detail key={data.person.id} detail={data.person}/>
+              <Detail key={data.person.id} detail={data.person}/> 
                /*  data.person.map((detail) => {
                     return <Detail key={detail.id} detail={detail}/>  
                 }) */

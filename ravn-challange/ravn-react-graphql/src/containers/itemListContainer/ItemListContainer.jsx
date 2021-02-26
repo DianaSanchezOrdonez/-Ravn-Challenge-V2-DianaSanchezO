@@ -1,14 +1,14 @@
 import React, {useState, useEffect} from 'react';
+import { Link } from 'react-router-dom';
 import { gql, useQuery } from '@apollo/client';
 
-/**Components */
-import Item from '../../components/item/Item';
+import * as IconName from "react-icons/md";
 
 import './ItemListContainer.css';
 
 const GET_PEOPLE = gql`
 {
-    allPeople (first:5) {
+    allPeople {
         people {
         id
         name
@@ -37,10 +37,16 @@ const ItemListContainer = () => {
         <main className='container-items'>
             {
                 data.allPeople.people.map((character) => {
-                    return <Item key={character.id} id={character.id} name={character.name} item={character}/>
+                  {console.log('item',character)}
+                    return (<section key={character.id} className='card-item d-flex-row'>
+                              <div className="card-body">
+                                  <h2 className='h2-text-default'>{character.name}</h2>
+                                  <p className='p-text-low-emphasis'>{(character.species) ? character.species.name : 'Human'} from {character.homeworld.name}</p> 
+                              </div>
+                              <button className='btn-detail-card'><Link to={`/${character.id}`}><IconName.MdKeyboardArrowRight/></Link></button>        
+                          </section>)
                   })
             }
-            <Item/>
         </main>
     )
 }
