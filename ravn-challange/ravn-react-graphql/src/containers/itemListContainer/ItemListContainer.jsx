@@ -6,7 +6,7 @@ import Item from '../../components/item/Item';
 
 import './ItemListContainer.css';
 
-const GET_GREETING = gql`
+const GET_PEOPLE = gql`
 {
     allPeople (first:5) {
         people {
@@ -28,7 +28,7 @@ const GET_GREETING = gql`
   }); */
 
 const ItemListContainer = () => {
-    const { loading, error, data } = useQuery(GET_GREETING);
+    const { loading, error, data } = useQuery(GET_PEOPLE);
     
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error data!..</p>;
