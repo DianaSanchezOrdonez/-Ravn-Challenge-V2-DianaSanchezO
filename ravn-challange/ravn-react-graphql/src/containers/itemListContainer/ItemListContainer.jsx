@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import { gql, useQuery } from '@apollo/client';
 
+/**Components */
 import Item from '../../components/item/Item';
 
 import './ItemListContainer.css';
