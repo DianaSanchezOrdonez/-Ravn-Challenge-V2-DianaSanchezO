@@ -14,7 +14,7 @@ export const Home = () => {
             <Navbar />
             <section className="container d-flex-row">
                 <ItemListContainer/>
-                {/* <ItemDetailContainer itemID={itemID}/> */}
+                <ItemDetailContainer itemID={itemID}/>
             </section>
         </>
     )

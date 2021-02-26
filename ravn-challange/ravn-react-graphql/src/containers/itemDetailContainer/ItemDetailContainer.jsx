@@ -27,13 +27,13 @@ query getDetailPerson ($itemID: ID!) {
 const ItemDetailContainer = ({itemID}) => {
     const { loading, error, data } = useQuery(GET_DETAIL_PERSON, {variables: {itemID}});
     
-    if (loading) return <p>Loading...</p>;
-    if (error) return <p>Error data!..</p>;
+    if (loading) return <p className='hide'>Loading...</p>;
+    if (error) return <p className='hide'>Data error!</p>; 
 
     return (
         <aside className='container-detail'>
             {
-              <Detail key={data.person.id} detail={data.person}/> 
+              <Detail key={data.person.id} detail={data.person}/>
                /*  data.person.map((detail) => {
                     return <Detail key={detail.id} detail={detail}/>  
                 }) */
