@@ -1,0 +1,51 @@
+:root {
+  --color-ravn-black: #121212;
+  --color-dark: #333333;
+  --color-light: #828282;
+  --color-emphasis: #ec5757; 
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h2, p {
+  margin: 0;
+}
+
+.h2-text-default {
+  font-size: 17px;
+  color: rgba(0,0,0,1);
+}
+
+.h2-text-low-emphasis {
+  font-size: 17px;
+  color: rgba(0, 0, 0, .3);
+}
+
+.h2-text-high-emphasis {
+  font-size: 17px;
+  color: rgba(253, 87, 87, 1);
+}
+
+.p-text-default {
+  font-size: 14px;
+  color:rgba(0, 0, 0, 1);
+}
+
+.p-text-low-emphasis {
+  font-size: 14px;
+  color:rgba(0, 0, 0, .5);
+}
+
+/** STYLES FLEXBOX */
+.d-flex-row {
+  display: flex;
+}
+
+.d-flex-column {
+  display: flex;
+  flex-direction: column;
+}
