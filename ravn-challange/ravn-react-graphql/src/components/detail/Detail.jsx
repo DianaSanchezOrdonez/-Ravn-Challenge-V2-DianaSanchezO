@@ -3,7 +3,7 @@ import React from 'react';
 import './Detail.css'
 
 const Detail = ({detail}) => {
-    console.log('detail', detail)
+   
     return (
         <section className='section-detail d-flex-column'>
 
@@ -26,7 +26,7 @@ const Detail = ({detail}) => {
             </div>
             <h2 className='h2-text-default  margin-2'>Vehicles</h2>
             {
-                (detail.starshipConnection.starships) ? detail.starshipConnection.starships.map((starship) => { return ( <div className='detail'><p  className='text-light'>{starship.name}</p></div>) }) : null
+                (detail.starshipConnection.starships) ? detail.starshipConnection.starships.map((starship, index) => { return ( <div key={index} className='detail'><p  className='text-light'>{starship.name}</p></div>) }) : null
             }
         
         </section>

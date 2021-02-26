@@ -37,7 +37,7 @@ const ItemListContainer = () => {
         <main className='container-items'>
             {
                 data.allPeople.people.map((character) => {
-                    return <Item key={character.id} name={character.name} item={character}/>
+                    return <Item key={character.id} id={character.id} name={character.name} item={character}/>
                   })
             }
             <Item/>

@@ -8,17 +8,16 @@ import './ItemDetailContainer.css';
 
 const GET_DETAIL_PEOPLE = gql`
 {
-    allPeople(first:1) {
-        people{
-        name
-        eyeColor
-        hairColor
-        skinColor
-        birthYear
-        starshipConnection {
-          starships {
-            name
-          }
+    person (id:"cGVvcGxlOjE"){
+      id
+      name
+      eyeColor
+      hairColor
+      skinColor
+      birthYear
+      starshipConnection {
+        starships {
+          name
         }
       }
     }
@@ -29,8 +28,10 @@ const GET_DETAIL_PEOPLE = gql`
     return <p key={index}>{character.name}</p>;
   }); */
 
-const ItemDetailContainer = () => {
+const ItemDetailContainer = ({itemID}) => {
     const { loading, error, data } = useQuery(GET_DETAIL_PEOPLE);
+
+    console.log('itemID', itemID)
     
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error data!..</p>;
@@ -38,9 +39,10 @@ const ItemDetailContainer = () => {
     return (
         <aside className='container-detail'>
             {
-                data.allPeople.people.map((detail) => {
-                    return <Detail detail={detail}/>  
-                })
+                <Detail key={data.person.id} detail={data.person}/>
+               /*  data.person.map((detail) => {
+                    return <Detail key={detail.id} detail={detail}/>  
+                }) */
             }
            
         </aside>

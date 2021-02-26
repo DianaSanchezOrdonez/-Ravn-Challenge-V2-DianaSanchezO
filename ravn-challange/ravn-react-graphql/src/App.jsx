@@ -20,6 +20,7 @@ const App = () => {
       <BrowserRouter>
         <Switch>
           <Route exact path='/' component={Home}/>
+          <Route exact path='/:itemID' component={Home}/>
         </Switch>
       </BrowserRouter>
     </>
