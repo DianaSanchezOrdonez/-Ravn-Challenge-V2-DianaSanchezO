@@ -2,7 +2,7 @@
   --color-ravn-black: #121212;
   --color-dark: #333333;
   --color-light: #828282;
-  --color-emphasis: #ec5757; 
+  --color-emphasis: #ec5757;
 }
 
 body {
@@ -11,24 +11,25 @@ body {
   box-sizing: border-box;
 }
 
-h2, p {
+h2,
+p {
   margin: 0;
 }
 
-a{
+a {
   text-decoration: none;
   color: var(--color-ravn-black);
 }
 
 .h2-text-default {
   font-size: 17px;
-  color: rgba(0,0,0,1);
+  color: rgba(0, 0, 0, 1);
   text-transform: capitalize;
 }
 
 .h2-text-low-emphasis {
   font-size: 17px;
-  color: rgba(0, 0, 0, .3);
+  color: rgba(0, 0, 0, 0.3);
 }
 
 .h2-text-high-emphasis {
@@ -38,12 +39,12 @@ a{
 
 .p-text-default {
   font-size: 14px;
-  color:rgba(0, 0, 0, 1);
+  color: rgba(0, 0, 0, 1);
 }
 
 .p-text-low-emphasis {
   font-size: 14px;
-  color:rgba(0, 0, 0, .5);
+  color: rgba(0, 0, 0, 0.5);
 }
 
 /** STYLES FLEXBOX */

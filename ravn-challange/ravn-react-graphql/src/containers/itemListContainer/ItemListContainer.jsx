@@ -1,8 +1,11 @@
 import React, {useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import { gql, useQuery } from '@apollo/client';
-
+/**Library React-icons */
 import * as IconName from "react-icons/md";
+
+/**Components */
+import Loader from '../../components/loader/Loader';
 
 import './ItemListContainer.css';
 
@@ -30,14 +33,14 @@ const GET_PEOPLE = gql`
 const ItemListContainer = () => {
     const { loading, error, data } = useQuery(GET_PEOPLE);
     
-    if (loading) return <p>Loading...</p>;
-    if (error) return <p>Error data!..</p>;
+    if (loading) return <Loader error={false}/>;
+    if (error) return <Loader error={true}/> ;
    
     return (
         <main className='container-items'>
             {
                 data.allPeople.people.map((character) => {
-                  {console.log('item',character)}
+                 
                     return (<section key={character.id} className='card-item d-flex-row'>
                               <div className="card-body">
                                   <h2 className='h2-text-default'>{character.name}</h2>
