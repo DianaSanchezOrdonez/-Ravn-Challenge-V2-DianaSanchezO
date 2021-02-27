@@ -10,7 +10,7 @@
 .btn-detail-card {
     border: none;
     outline: none;
-    background: #fff;
+    background: none;
     padding: 24px;
     cursor: pointer;
     font-size: 18px;

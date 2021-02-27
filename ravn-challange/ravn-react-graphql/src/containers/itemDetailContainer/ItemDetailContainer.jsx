@@ -1,14 +1,14 @@
-import React from 'react';
-import { gql, useQuery } from '@apollo/client';
+import React from "react";
+import { gql, useQuery } from "@apollo/client";
 
 /**Components */
-import Detail from '../../components/detail/Detail';
+import Detail from "../../components/detail/Detail";
 
-import './ItemDetailContainer.css';
+import "./ItemDetailContainer.css";
 
 const GET_DETAIL_PERSON = gql`
-query getDetailPerson ($itemID: ID!) {
-    person (id: $itemID){
+  query getDetailPerson($itemID: ID!) {
+    person(id: $itemID) {
       id
       name
       eyeColor
@@ -24,23 +24,19 @@ query getDetailPerson ($itemID: ID!) {
   }
 `;
 
-const ItemDetailContainer = ({itemID}) => {
-    const { loading, error, data } = useQuery(GET_DETAIL_PERSON, {variables: {itemID}});
-    
-    if (loading) return <p className='hide'>Loading...</p>;
-    if (error) return <p className='hide'>Data error!</p>; 
+const ItemDetailContainer = ({ itemID }) => {
+  const { loading, error, data } = useQuery(GET_DETAIL_PERSON, {
+    variables: { itemID },
+  });
 
-    return (
-        <aside className='container-detail'>
-            {
-              <Detail key={data.person.id} detail={data.person}/>
-               /*  data.person.map((detail) => {
-                    return <Detail key={detail.id} detail={detail}/>  
-                }) */
-            }
-           
-        </aside>
-    )
-}
+  if (loading) return <p className="hide">Loading...</p>;
+  if (error) return <p className="hide">Data error!</p>;
 
-export default ItemDetailContainer
+  return (
+    <aside className="container-detail">
+      {<Detail key={data.person.id} detail={data.person} />}
+    </aside>
+  );
+};
+
+export default ItemDetailContainer;
