@@ -4,7 +4,9 @@
 
 Ravn Stars Wars is a web application where the user can find descriptive <br> information on the characteristics of each of his Start Wars characters.
 
-![Functionality](/ravn_challenge.gif)
+![Functionality](https://raw.githubusercontent.com/DianaSanchezOrdonez/Ravn-Challenge-V2-DianaSanchezO/ravn-challange/ravn-react-graphql/src/ravn_challenge.gif)
+
+![Functionality](src/ravn_challenge.gif)
 
 ## Instalation
 
