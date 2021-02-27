@@ -6,7 +6,7 @@ Ravn Stars Wars is a web application where the user can find descriptive <br> in
 
 ![Functionality](src/ravn_challenge.gif)
 
-## Instalation
+## Installation
 
 **Clone** the repository with this command
 
